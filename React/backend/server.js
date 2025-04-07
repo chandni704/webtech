@@ -204,7 +204,26 @@ app.post('/logout', (req, res) => {
   }
 });
 // **Start the Server**
-const PORT = process.env.PORT || 5000; // Port set to 5000 for local development
+const PORT = process.env.PORT || 3000; // Port set to 5000 for local development
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+app.use(express.json());
+const _dirname=path.dirname("")
+const buildpath = path.join(_dirname,"../client/build")
+app.use(express.static(buildpath));
+app.use(
+    cors({
+      "origin": "*",
+    })
+  );
+app.use(userroutes);
+app.use(productroutes);
+
+
+
+
+app.listen(PORT,()=>{
+    console.log(server runing on port no :${PORT})
+})
