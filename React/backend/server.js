@@ -222,8 +222,3 @@ app.use(userroutes);
 app.use(productroutes);
 
 
-
-
-app.listen(PORT,()=>{
-    console.log(server runing on port no :${PORT})
-})
