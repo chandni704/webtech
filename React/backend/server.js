@@ -211,7 +211,7 @@ app.listen(PORT, () => {
 
 app.use(express.json());
 const _dirname=path.dirname("")
-const buildpath = path.join(_dirname,"../client/build")
+const buildpath = path.join(_dirname,"../React/frontend/emsys/src/App.js")
 app.use(express.static(buildpath));
 app.use(
     cors({
